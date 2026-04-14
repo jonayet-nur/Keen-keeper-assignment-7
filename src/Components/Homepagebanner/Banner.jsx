@@ -24,5 +24,4 @@ relationships that matter most.
    </div>
   )
 }
-
 export default Banner

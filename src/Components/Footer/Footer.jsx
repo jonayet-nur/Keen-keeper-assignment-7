@@ -4,7 +4,7 @@ import { TiSocialFacebookCircular, TiSocialInstagram } from 'react-icons/ti'
 
 const Footer = () => {
   return (
-    <footer className="  bg-[#244D3F] text-white p-10 my-10">
+    <footer className="  bg-[#244D3F] text-white p-10 ">
   <aside className='space-y-3'>
    
     <h2 className="font-bold text-4xl text-center">
