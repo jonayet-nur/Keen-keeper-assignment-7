@@ -3,8 +3,9 @@ import { FaPlus } from 'react-icons/fa6'
 
 const Banner = () => {
   return (
-    <div
-  className="hero h-100 bg-linear-to-r from-[#eef9f6] via-[#effaf6] to-[#effdf8] mt-2"
+   <div className='mt-5'>
+     <div
+  className="hero h-100 bg-linear-to-r from-[#eef9f6] via-[#effaf6] to-[#effdf8]"
   
 >
   {/* <div className="hero-overlay"></div> */}
@@ -20,6 +21,7 @@ relationships that matter most.
     </div>
   </div>
 </div>
+   </div>
   )
 }
 

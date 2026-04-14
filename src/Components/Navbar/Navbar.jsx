@@ -31,7 +31,7 @@ const Navbar = () => {
         </>
     )
   return (
-  <div className='bg-base-200 p-4 '>
+  <div className='bg-base-200  p-4  '>
      <div className='flex justify-between items-center container mx-auto '>
   
   {/* Left: Logo */}
