@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const FriendCard = ({friend}) => {
-    console.log("Friend", friend)
+    // console.log("Friend", friend)
   return (
-    <div>{friend.length}
+    <div>
     
     
-     <div className="card bg-base-100  shadow-sm transition-all duration-400 ease-in-out 
+     <Link to={`/frienddetails/${friend.id}`} className="card bg-base-100  shadow-sm transition-all duration-400 ease-in-out 
 hover:bg-linear-to-br hover:from-[#c2f9e3] hover:to-[#96b1a0]  hover:border-transparent 
     hover:-translate-y-2 hover:shadow-[0px_20px_30px_rgba(100,116,139,0.3)]">
   <figure className="px-10 pt-10">
@@ -24,7 +25,7 @@ hover:bg-linear-to-br hover:from-[#c2f9e3] hover:to-[#96b1a0]  hover:border-tran
     </div>
     <span className={` text-white p-2 rounded-full ${friend.status === "on-track"? "bg-cyan-600" : friend.status === "almost due"?"bg-amber-500":"bg-red-400"}`}>{friend.status}</span>
   </div>
-</div>
+</Link>
     
     </div>
 

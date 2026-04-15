@@ -12,7 +12,10 @@ import FriendDetails from "../Pages/FriendDetails/FriendDetails";
         children:[
             {index:true ,Component:Homepages},
             {path:"/friend" ,Component:Friendpage},
-            {path:"/frienddetails/:id", Component:FriendDetails}
+            {path:"/frienddetails/:id", Component:FriendDetails,
+                loader:()=>fetch('/friendData.json')
+
+            }
         ],
 
         errorElement:<Error></Error>

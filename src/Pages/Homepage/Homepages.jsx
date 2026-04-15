@@ -10,7 +10,7 @@ const Homepages = () => {
         <Banner></Banner>
         <StatCard></StatCard>
         <AllfriendCard></AllfriendCard>
-        <Footer></Footer>
+       
     </div>
   )
 }

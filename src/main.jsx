@@ -7,8 +7,7 @@ import { router } from './routes/Routes'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <h2 className='text-2xl bg-fuchsia-600'>Hello World</h2>
-    <button className='btn btn-primary'>Click me</button> */}
+   
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>,
 )
