@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FiArchive, FiPhoneCall } from 'react-icons/fi'
 import { MdOutlineTextsms } from 'react-icons/md'
 import { PiVideoCamera } from 'react-icons/pi'
 import { RiDeleteBin2Line, RiDeleteBin6Line, RiDeleteBinLine, RiNotificationSnoozeLine } from 'react-icons/ri'
 import { useLoaderData, useParams } from 'react-router'
+import { FriendContext } from '../../context/TimelineContext'
 
 const FriendDetails = () => {
     const {id}= useParams()
@@ -12,6 +13,11 @@ const FriendDetails = () => {
     console.log(friends)
      const expectedFriends = friends.find((friend)=> friend.id == id)
      console.log(expectedFriends)
+
+   
+const {handleCall,handleText,handleVideoCall} =useContext(FriendContext)
+
+
   return (
   <div className='my-30 container mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-8 '>
    <div className='container mx-auto  '>
@@ -72,17 +78,17 @@ const FriendDetails = () => {
     <h3 className='font-bold text-gray-500 mt-1'>Connect every {expectedFriends.goal}</h3>
   </div>
 </div>
-
+ {/* call,text and video */}
 <div className="shadow-sm bg-base-500 p-10 text-center rounded-xl lg:w-2xl w-full mt-4 grid grid-cols-3 gap-5">
- <button class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+ <button onClick={ ()=>handleCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
    <FiPhoneCall className='text-xl'></FiPhoneCall>
    <span className='font-semibold'>Call</span>
   </button>
-  <button class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+  <button onClick={()=> handleText(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
    <MdOutlineTextsms className='text-xl'></MdOutlineTextsms>
    <span className='font-semibold'>Text</span>
   </button>
-  <button class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+  <button onClick={()=>handleVideoCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
    <PiVideoCamera className='text-xl'></PiVideoCamera>
    <span className='font-semibold'>Video</span>
   </button>

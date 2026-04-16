@@ -4,6 +4,7 @@ import Homepages from "../Pages/Homepage/Homepages";
 import Error from "../Pages/Error";
 import Friendpage from "../Pages/Friendpage/Friendpage";
 import FriendDetails from "../Pages/FriendDetails/FriendDetails";
+import StatsLine from "../Pages/AnalyticsStats/StatsLine";
 
  export const router = createBrowserRouter([
     {
@@ -15,6 +16,9 @@ import FriendDetails from "../Pages/FriendDetails/FriendDetails";
             {path:"/frienddetails/:id", Component:FriendDetails,
                 loader:()=>fetch('/friendData.json')
 
+            },
+            {
+                path:"/stats",Component:StatsLine
             }
         ],
 

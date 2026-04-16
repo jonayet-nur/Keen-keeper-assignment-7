@@ -22,7 +22,7 @@ const Navbar = () => {
            </NavLink>
            </li>
 
-             <li ><NavLink to='/page not' className={({isActive})=>`flex items-center gap-1 ${isActive?" bg-[#244D3F] text-white  p-2  rounded-md":""}`}>
+             <li ><NavLink to='/stats' className={({isActive})=>`flex items-center gap-1 ${isActive?" bg-[#244D3F] text-white  p-2  rounded-md":""}`}>
             <FaChartLine />
              <span>Stats</span>
              </NavLink>
