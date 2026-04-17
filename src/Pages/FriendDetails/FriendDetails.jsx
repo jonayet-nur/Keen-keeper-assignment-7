@@ -10,9 +10,9 @@ const FriendDetails = () => {
     const {id}= useParams()
     // console.log(id)
     const friends = useLoaderData()
-    console.log(friends)
+    //  console.log(friends)
      const expectedFriends = friends.find((friend)=> friend.id == id)
-     console.log(expectedFriends)
+    //  console.log(expectedFriends)
 
    
 const {handleCall,handleText,handleVideoCall} =useContext(FriendContext)
@@ -37,7 +37,8 @@ const {handleCall,handleText,handleVideoCall} =useContext(FriendContext)
          {expectedFriends.tags.map(tag => (<div className="bg-green-300 text-black font-semibold p-2 rounded-full">{tag}</div>))}
     </div>
     <span className={` text-white p-2 rounded-full ${expectedFriends.status === "on-track"? "bg-cyan-600" : expectedFriends.status === "almost due"?"bg-amber-500":"bg-base-400"}`}>{expectedFriends.status}</span>
-    <p className='font-semibold'>{expectedFriends.bio}</p>
+    <p className='font-semibold text-gray-500'>"{expectedFriends.bio}"</p>
+    <small className='font-semibold text-gray-400'>Email: {expectedFriends.email}</small>
   </div>
 </div>
 {/* button */}
@@ -80,15 +81,15 @@ const {handleCall,handleText,handleVideoCall} =useContext(FriendContext)
 </div>
  {/* call,text and video */}
 <div className="shadow-sm bg-base-500 p-10 text-center rounded-xl lg:w-2xl w-full mt-4 grid grid-cols-3 gap-5">
- <button onClick={ ()=>handleCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+ <button onClick={ ()=>handleCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 duration-200 hover:bg-[#04563caf] hover:text-white hover:scale-95">
    <FiPhoneCall className='text-xl'></FiPhoneCall>
    <span className='font-semibold'>Call</span>
   </button>
-  <button onClick={()=> handleText(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+  <button onClick={()=> handleText(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500   duration-200 hover:bg-[#04563caf] hover:text-white hover:scale-95 ">
    <MdOutlineTextsms className='text-xl'></MdOutlineTextsms>
    <span className='font-semibold'>Text</span>
   </button>
-  <button onClick={()=>handleVideoCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500 transition hover:bg-gray-50 active:scale-95">
+  <button onClick={()=>handleVideoCall(expectedFriends)} class="flex flex-1 flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-5 text-sm text-gray-500   duration-200 hover:bg-[#04563caf] hover:text-white hover:scale-95">
    <PiVideoCamera className='text-xl'></PiVideoCamera>
    <span className='font-semibold'>Video</span>
   </button>

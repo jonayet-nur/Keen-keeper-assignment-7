@@ -27,7 +27,7 @@ filter === "all"
 className="border p-4 rounded-lg"
 onChange={(e)=> setFilter(e.target.value)}
 >
-<option value="all">Filter timeline</option>
+<option value="all">All Timeline</option>
 <option value="call">Call</option>
 <option value="text">Text</option>
 <option value="video">Video Call</option>
