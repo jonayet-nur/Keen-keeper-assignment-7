@@ -20,7 +20,7 @@ const {handleCall,handleText,handleVideoCall} =useContext(FriendContext)
 
   return (
   <div className='my-30 container mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-8 '>
-   <div className='container mx-auto  '>
+   <div className='container mx-auto grid justify-center items-center '>
        <div  className="card  bg-base-500 w-100 shadow-sm 
   ">
   <figure className="px-10 pt-10">
